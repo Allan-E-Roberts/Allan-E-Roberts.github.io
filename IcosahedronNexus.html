@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 3D CSS Project </title>
+
+    <link rel="stylesheet" type="text/css" href="IcosahedronNexusStyles.css">
+
+</head>
+<body> 
+
+<div class="information">
+    <p>Pardon the formtting. This is an experimental feature I am still working on, and as such, uses very bad temporary code that I change often.</p>
+    <p>This page is pure HTML and CSS. No JavaScript, webscripts, nor even SCSS, SASS, nor SASSY was used. True: there is no official way to track mouse positions in css, nor any official way to track the progress of an animation, nor alter animations without resetting them. That doesn't mean such is impossible; it just means it takes more creativity.</p>
+    <p>There is still a problem with this tool: gimble lock. CSS was never designed with any intention of handling tasks such as this, and there is a bug with how it assigns coordinate reference frames. When you first refresh the page, you will notice that the mouse follows the cursor accurately when it's nearby, but after a while, only the top and bottom controls work as expected. An alterante way to view the bug is to locate the mouse diagonally from the icosahedron and follow the "home" tri. Notice that it follows a figure eight instead of making a full circle. CSS insistantly alters how references are assigned, and it wants to treat X and Y rotations differently. If there was a method to process both the same way, it would be easy (for absolute frames, nothing would be needed, and for relative frames, I could just plug in the conversions to transform the rotations back to the absolute frame), but all of the methods I know of get overriden when CSS 'fixes' the references.</p>
+</div>
+
+
+
+
+
+        <div class="IcosContainer">
+            <div class="rotationcontrol">
+                <div class="octsegment"></div>
+                <div class="octsegment"></div>
+                <div class="octsegment"></div>
+                <div class="octsegment"></div>
+                <div class="octsegment"></div>
+                <div class="octsegment"></div>
+                <div class="octsegment"></div>
+                <div class="octsegment"></div>
+
+                <div class="octsegment01"></div>
+                <div class="octsegment02"></div>
+                <div class="octsegment03"></div>
+                <div class="octsegment04"></div>
+                <div class="octsegment05"></div>
+                <div class="octsegment06"></div>
+                <div class="octsegment07"></div>
+                <div class="octsegment08"></div>
+
+                <div class="octsegment11"></div>
+                <div class="octsegment12"></div>
+                <div class="octsegment13"></div>
+                <div class="octsegment14"></div>
+                <div class="octsegment15"></div>
+                <div class="octsegment16"></div>
+                <div class="octsegment17"></div>
+                <div class="octsegment18"></div>
+                <div class="Icos" @onmousemove="@(e => Coordinates = $"X = {e.ClientX} Y = {e.ClientY}")">
+
+
+                    <div class="Tri" id="Tri1"> <a class="intri" href="index.html"><br/><br/><br/>HOME </a></div>
+                    <div class="Tri" id="Tri2"> <a class="intri" href="Resume.html"><br/><br/><br/>Resume</a></div>
+                    <div class="Tri" id="Tri3"> <a class="intri" href="Outdoors-BugoutBag.html"><br/><br/><br/>Bugout<br>Bag</a></div>
+                    <div class="Tri" id="Tri4"> <a class="intri" href="Poetry.html"><br/><br/><br/>Poetry</a></div>
+                    <div class="Tri" id="Tri5"> <a class="intri" href="IcosahedronNexus.html"><br/><br/>CSS<br/>Menu<br/>Test</a></div>
+
+                    <div class="Tri" id="Tri6"> <a class="intri" href="#"><br /><br /> </a></div>
+                    <div class="Tri" id="Tri7"> <a class="intri" href="#"><br /><br /> </a></div>
+                    <div class="Tri" id="Tri8"> <a class="intri" href="#"><br /><br /> </a></div>
+                    <div class="Tri" id="Tri9"> <a class="intri" href="#"><br /><br /> </a></div>
+                    <div class="Tri" id="Tri10"><a class="intri" href="#"><br /><br /> </a></div>
+
+                    <div class="Tri" id="Tri11"><a class="intri" href="#"><br /><br /> </a></div>
+                    <div class="Tri" id="Tri12"><a class="intri" href="#"><br /><br /> </a></div>
+                    <div class="Tri" id="Tri13"><a class="intri" href="#"><br /><br /> </a></div>
+                    <div class="Tri" id="Tri14"><a class="intri" href="#"><br /><br /> </a></div>
+                    <div class="Tri" id="Tri15"><a class="intri" href="#"><br /><br /> </a></div>
+
+                    <div class="Tri" id="Tri16"><a class="intri" href="#"><br /><br /> </a></div>
+                    <div class="Tri" id="Tri17"><a class="intri" href="#"><br /><br /> </a></div>
+                    <div class="Tri" id="Tri18"><a class="intri" href="#"><br /><br /> </a></div>
+                    <div class="Tri" id="Tri19"><a class="intri" href="#"><br /><br /> </a></div>
+                    <div class="Tri" id="Tri20"><a class="intri" href="#"><br /><br /> </a></div>
+                </div>
+
+            </div>        
+        </div>
+
+
+</body>
+
+
+
+
+
+
+
+<div class="content">
+    <div class="square"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+
+        <div class="Tri"></div>
+
+
+
+        
+<dim class="Tri" id="Tri1"> <br /><br /><br /> HOME </dim>
+        <dim class="Tri" id="Tri2">2 </dim>
+        <dim class="Tri" id="Tri3"> 3 </dim>
+        <dim class="Tri" id="Tri4"> <br /><br /><br /> 4 </dim>
+        <dim class="Tri" id="Tri5"> <br /><br /><br /> 5 </dim>
+
+        <dim class="Tri" id="Tri6"> <br /><br /><br /> 6 </dim>
+        <dim class="Tri" id="Tri7"> <br /><br /><br /> 7 </dim>
+        <dim class="Tri" id="Tri8"> <br /><br /><br /> 8 </dim>
+        <dim class="Tri" id="Tri9"> <br /><br /><br /> 9 </dim>
+        <dim class="Tri" id="Tri10"><br /><br /><br /> 10</dim>
+
+        <dim class="Tri" id="Tri11"><br /><br /><br /> 11</dim>
+        <dim class="Tri" id="Tri12"><br /><br /><br /> 12</dim>
+        <dim class="Tri" id="Tri13"><br /><br /><br /> 13</dim>
+        <dim class="Tri" id="Tri14"><br /><br /><br /> 14</dim>
+        <dim class="Tri" id="Tri15"><br /><br /><br /> 15</dim>
+
+        <dim class="Tri" id="Tri16"><br /><br /><br /> 16</dim>
+        <dim class="Tri" id="Tri17"><br /><br /><br /> 17</dim>
+        <dim class="Tri" id="Tri18"><br /><br /><br /> 18</dim>
+        <dim class="Tri" id="Tri19"><br /><br /><br /> 19</dim>
+        <dim class="Tri" id="Tri20"><br /><br /><br /> 20</dim>
+
+
+
+
+
+
+
+
+
+
+
+
+        <body> 
+    <div class="Icos" @onmousemove="@(e => Coordinates = $"X = {e.ClientX} Y = {e.ClientY}")">
+        <div class="Tri" id="Tri1""> <a class="intri" href="Library.html"><br /><br />HOME </a></div>
+        <div class="Tri" id="Tri2"> <br /><br /> 2 </div>
+        <dim class="Tri" id="Tri3"> <br /><br /> 3 </dim>
+        <dim class="Tri" id="Tri4"> <br /><br /> 4 </dim>
+        <dim class="Tri" id="Tri5"> <br /><br /> 5 </dim>
+
+        <dim class="Tri" id="Tri6"> <br /><br /> 6 </dim>
+        <dim class="Tri" id="Tri7"> <br /><br /> 7 </dim>
+        <dim class="Tri" id="Tri8"> <br /><br /> 8 </dim>
+        <dim class="Tri" id="Tri9"> <br /><br /> 9 </dim>
+        <dim class="Tri" id="Tri10"><br /><br /> 10</dim>
+
+        <dim class="Tri" id="Tri11"><br /><br /> 11</dim>
+        <dim class="Tri" id="Tri12"><br /><br /> 12</dim>
+        <dim class="Tri" id="Tri13"><br /><br /> 13</dim>
+        <dim class="Tri" id="Tri14"><br /><br /> 14</dim>
+        <dim class="Tri" id="Tri15"><br /><br /> 15</dim>
+
+        <dim class="Tri" id="Tri16"><br /><br /> 16</dim>
+        <dim class="Tri" id="Tri17"><br /><br /> 17</dim>
+        <dim class="Tri" id="Tri18"><br /><br /> 18</dim>
+        <dim class="Tri" id="Tri19"><br /><br /> 19</dim>
+        <dim class="Tri" id="Tri20"><br /><br /> 20</dim>
+    </div>
+
+
+</body>
+
+-->

@@ -1,0 +1,371 @@
+
+*{
+    font-family: 
+    ;
+}
+
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+    .ScrollListMenu{
+        position: relative;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: rgb(51, 14, 2);
+        width: 100%;
+    }
+
+
+    
+        .LeftButton{
+            order: 1;
+            z-index: 1;
+            width: 2rem;
+            background: rgb(51, 14, 2);
+            border: 1px solid rgb(87, 24, 3);
+            padding: 0 .8rem 0 .8rem;
+        }
+        .LeftButton:hover ~ .MovingSectionContainer .MovingSection{
+            animation-play-state: running, paused;
+        }
+        .RightButton{
+           order: 3;
+           z-index: 1;
+           width: 2rem;
+           background: rgb(51, 14, 2);
+           border: 1px solid rgb(87, 24, 3);
+           padding: 0 .8rem 0 .8rem;
+        }
+        .RightButton:hover ~ .MovingSectionContainer .MovingSection{
+            animation-play-state: paused, running;
+        }
+        .MovingSectionContainer{
+            order: 2;
+            z-index: 0;
+            width: calc(100% - 10rem);
+            display: flex;
+            flex-direction: row;
+            overflow: visible;
+            transform: translateX(-60rem);
+
+        }
+            .MovingSection{
+                display: flex;
+                flex-direction: row;
+                overflow: visible;
+
+                animation:
+                    NavLeft  2s infinite linear,
+                    NavRight 2s infinite linear
+                ;
+                animation-play-state: 
+                    paused, 
+                    paused
+                ;
+                animation-composition: add;
+
+            }
+            .Dropdown{
+                position: relative;
+                background: rgb(51, 14, 2);
+                color: white;
+                border: 1px solid rgb(87, 24, 3);
+                padding: 0 .8rem 0 .8rem;
+
+            }
+            .Dropdown a{
+                color: goldenrod;
+            }
+            .Innactive{
+                position: relative;
+                background: rgb(51, 14, 2);
+                color: white;
+                border: 1px solid rgb(87, 24, 3);
+                padding: 0 .8rem 0 .8rem;
+
+            }
+            .Innactive a{
+                color: grey;
+            }
+
+        @keyframes NavLeft {
+            0%   {transform: translateX(0%);}
+            100% {transform: translateX(-100%);}
+        }
+        
+        @keyframes NavRight {
+            0%   {transform: translateX(0);}
+            100% {transform: translateX(100%);}
+        }
+
+
+    .Content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+        .OptionalLeft{
+            order: 1;
+            flex-shrink: 0;
+            flex-grow: 1;
+            min-width: 1.5rem;
+        }
+        .OptionalRight{
+            order: 3;
+            flex-shrink: 0;
+            flex-grow: 1;
+            min-width: 1.5rem;
+        }
+        .Central{
+
+            order: 2;
+            flex-direction: row;
+            flex-basis: 75rem;
+        }
+
+
+
+/*.control-me::after {
+    --SimplifyState: 1;
+
+    content: "😃";
+    
+        --backgrounds: rgb(146, 37, 158);
+        --colors: black;
+    
+font-size: 100px;
+}
+#toggle:checked ~ .control-me::after {
+    --SimplifyState: 0;
+
+    content: "😩";
+    
+        --backgrounds: rgb(8, 9, 0);
+        --colors: white;
+    
+}*/
+.testthis:active ~ body{
+    animation-play-state: paused;
+
+}
+
+
+body{
+
+    background: green;
+    color: black;
+    animation: dummy 1s infinite linear;
+    animation-play-state: paused;
+
+
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.ScrollListMenu{
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: rgb(51, 14, 2);
+    width: 100%;
+}
+
+
+
+    .LeftButton{
+        order: 1;
+        z-index: 1;
+        width: 2rem;
+        background: rgb(51, 14, 2);
+        border: 1px solid rgb(87, 24, 3);
+        padding: 0 .8rem 0 .8rem;
+    }
+    .LeftButton:hover ~ .MovingSectionContainer .MovingSection{
+        animation-play-state: running, paused;
+    }
+    .RightButton{
+       order: 3;
+       z-index: 1;
+       width: 2rem;
+       background: rgb(51, 14, 2);
+       border: 1px solid rgb(87, 24, 3);
+       padding: 0 .8rem 0 .8rem;
+    }
+    .RightButton:hover ~ .MovingSectionContainer .MovingSection{
+        animation-play-state: paused, running;
+    }
+    .MovingSectionContainer{
+        order: 2;
+        z-index: 0;
+        width: calc(100% - 10rem);
+        display: flex;
+        flex-direction: row;
+        overflow: visible;
+        transform: translateX(-30rem);
+
+    }
+        .MovingSection{
+            display: flex;
+            flex-direction: row;
+            overflow: visible;
+
+            animation:
+                NavLeft  1s infinite linear,
+                NavRight 1s infinite linear
+            ;
+            animation-play-state: 
+                paused, 
+                paused
+            ;
+            animation-composition: add;
+
+        }
+        .Dropdown{
+            position: relative;
+            background: rgb(51, 14, 2);
+            border: 1px solid rgb(87, 24, 3);
+            padding: 0 .8rem 0 .8rem;
+
+        }
+
+
+    @keyframes NavLeft {
+        0%   {transform: translateX(0);}
+        100% {transform: translateX(-100%);}
+    }
+    
+    @keyframes NavRight {
+        0%   {transform: translateX(0);}
+        100% {transform: translateX(100%);}
+    }
+
+
+
+
+
+    .Content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+        .OptionalLeft{
+            order: 1;
+            flex-shrink: 0;
+            flex-grow: 1;
+            min-width: 1.5rem;
+        }
+        .OptionalRight{
+            order: 3;
+            flex-shrink: 0;
+            flex-grow: 1;
+            min-width: 1.5rem;
+        }
+        .Central{
+
+            order: 2;
+            flex-direction: row;
+            flex-basis: 75rem;
+        }
+
+
+
+
+
+
+label {
+
+    background: #5c4296;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    }
+
+.visually-hidden {
+    position: absolute;
+    left: -100vw;
+}
+
+
+
+#toggle:checked ~ label::after {
+    background: #6c9642;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+
+
+.sIcon{
+    height: 1rem;
+    margin-left: 1.5rem;
+    margin-right: .3rem;
+}
+.Lister{
+    text-wrap: nowrap;
+}
+.listheader {
+    margin-left: -2rem;
+}
+.listheader li{
+    margin-top: 0rem;
+    margin-left: 2rem;
+}
+.MoveLeft{
+    float: left;
+}
+.MoveRight{
+    float: right;
+}
+.TabLeft{
+    margin-left: -2rem;
+}
+
+
+
+
+/*@media (prefers-color-scheme: dark) {
+    body{
+        background: rgb(8, 9, 0);
+        color: white;
+    }
+}*/
+
+/*#toggle:checked {
+    body{
+        background: rgb(8, 9, 0);
+        color: white;
+    }
+}*/
+
+
+
+
+@keyframes dummy {
+    0%   {background: white;}
+    100% {background: blue;}
+}
+
+
+.ContactSection{
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(180deg, transparent 0rem, grey 3rem);
+}

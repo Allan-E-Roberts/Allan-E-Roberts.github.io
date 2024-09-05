@@ -1,0 +1,583 @@
+/* Define Icosahedron Properties*/
+$radius: 150px;
+/*--spintrue: 1;*/
+
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+.Rotationfix{
+}
+
+body {
+    background-color: #202920;
+    background-image: linear-gradient(to bottom right, #212124, #000000)
+    height: 100vh;
+    display: grid;
+    grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+}
+.information{
+    font-size: large;
+    color: white;
+    width: 400px;
+}
+
+.IcosContainer{     /*This container holds everything and does not rotate. It is used for positioning the menu on the website.*/
+    width: 250px;
+    height: 250px;
+    font-size: 15px;
+    position: absolute;
+    left: 500px;
+    top: 200px;
+
+    --IcosRadius: 100px;
+    --TriHeight: calc(var(--IcosRadius) * 1.545454);
+    --TriWidth:  calc(var(--IcosRadius) * 1.325454);
+
+    transform-style: preserve-3d;
+    /*transform: rotatez(90deg);*/
+    
+}
+
+
+.Icos{              /*This is the icosahedron. This is the entity that rotates.*/
+    width: 120px;
+    height: 120px;
+    font-size: 15px;
+    position: absolute;
+
+
+
+    --thetax: 0;
+    --theta-x: 0;
+    --thetay: 0;
+    --theta-x: 0;
+    --thetaz: 0;
+    --theta-z: 0;
+
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+    /*transform: rotatez(90deg);*/
+    animation: 
+        dummy 999s infinite linear,
+        spin-x  10s infinite linear,
+        spinx 10s infinite linear,
+        spin-y  10s infinite linear,
+        spiny 10s infinite linear,
+        spin-z  10s infinite linear,
+        spinz 10s infinite linear
+        ;
+
+        /*
+        x, y
+        x-abs
+        y-object
+
+        y, x
+        y-object
+        x-abs
+        
+        x, z
+        x-abs
+        z-object
+
+        z, y
+        z-abs
+        y-object
+
+
+
+        */
+    
+    animation-play-state: 
+    paused,
+    paused,
+    running,
+        paused,
+        running,
+        paused,
+        paused
+        ;
+    animation-composition: add;
+
+    perspective: 1000px;
+    perspective:  left;
+
+}
+.Icos:hover{        /*On hover, pause animation. This is to make it easier for the user to select an item*/
+    animation-play-state: 
+    paused,
+        paused,  /* x*/
+        paused,  /*-x*/
+        paused,  /* y*/
+        paused,  /*-y*/
+        paused,  /* z*/
+        paused   /*-z*/
+        ;
+
+}
+.Tri{               /*Tri as a parent applies the formatting for all the menu children. The clip-path here acts as the border.*/
+    position: absolute;
+    text-align: center;
+    max-width: var(--TriWidth);
+    max-height: var(--TriHeight);
+    min-width: var(--TriWidth);
+    min-height: var(--TriHeight);
+    clip-path: polygon(50% 2%, 2% 74%, 98% 74%);
+    background: rgb(48, 0, 136);
+    backdrop-filter: blur(10px) saturate(70%);
+/*    border-radius: 10px;
+//    background-image:
+//        linear-gradient(to bottom right,  transparent 50%, yellow 52%,  red 0),
+//        linear-gradient(to bottom left,   transparent 50%, yellow 52%,  red 0),
+//        linear-gradient(to top,  transparent 32%, yellow 35%, transparent 35%),
+//        linear-gradient(to top,  transparent 32%, yellow 35%, transparent 35%)
+//        ;
+//    background-size: 50% 74%;
+//    background-repeat: no-repeat;
+//    background-position: top left, top right, bottom left, bottom right; */
+    margin: 0px 0px 0px 0px;
+    vertical-align: bottom;
+    justify-content: center;
+    display: flex;
+
+    animation: GlowPulse .5s infinite linear;
+
+}
+.intri{                 /*intri is the interior triangle with the link. intri is a child of every Tri*/
+    position: absolute;
+    text-align: center;
+    max-width: var(--TriWidth);
+    max-height: var(--TriHeight);
+    min-width: var(--TriWidth);
+    min-height: var(--TriHeight);
+    clip-path: polygon(50% 5%, 5% 73%, 95% 73%);
+    background: rgb(7, 0, 20);
+
+    /*animation: slowgrow .5s infinite linear;*/
+}
+#Tri1{                  /*Tri(n) denotes the location and orientation of each menu triangle. This can be compressed into 4 for loops, but I wanted to see alternate options for aligning entities together.*/
+    
+    /*animation: slowgrow 2s infinite linear;*/
+    transform: 
+    translateZ(var(--IcosRadius));
+}
+
+#Tri2{
+    transform: 
+    rotateZ(60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+#Tri3{
+    transform: 
+    rotateZ(180deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+#Tri4{
+    transform:
+    rotateZ(-60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+
+#Tri5{
+    transform:
+    rotateZ(60deg)
+    rotateX(41.8deg)
+    rotateZ(-60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+#Tri6{
+    transform:
+    rotateZ(60deg)
+    rotateX(41.8deg)
+    rotateZ(60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+#Tri7{
+    transform:
+    rotateZ(180deg)
+    rotateX(41.8deg)
+    rotateZ(-60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+
+#Tri8{
+    transform:
+    rotateZ(180deg)
+    rotateX(41.8deg)
+    rotateZ(60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+#Tri9{
+    transform:
+    rotateZ(-60deg)
+    rotateX(41.8deg)
+    rotateZ(-60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+#Tri10{
+    transform:
+    rotateZ(-60deg)
+    rotateX(41.8deg)
+    rotateZ(60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+
+
+#Tri11{             /*Note that for all tri(n) n>10, I added rotatex(180deg) to act as a rear shell. Again, practicing alternate methods of orientating objects. This is not functionally more efficient than 4 for statements*/
+    transform: 
+    rotateX(180deg)
+    translateZ(var(--IcosRadius));
+}
+
+#Tri12{
+    transform: 
+    rotateX(180deg)
+    rotateZ(60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+#Tri13{
+    transform: 
+    rotateX(180deg)
+    rotateZ(180deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+#Tri14{
+    transform:
+    rotateX(180deg)
+    rotateZ(-60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+
+#Tri15{
+    transform:
+    rotateX(180deg)
+    rotateZ(60deg)
+    rotateX(41.8deg)
+    rotateZ(-60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+#Tri16{
+    transform:
+    rotateX(180deg)
+    rotateZ(60deg)
+    rotateX(41.8deg)
+    rotateZ(60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+#Tri17{
+    transform:
+    rotateX(180deg)
+    rotateZ(180deg)
+    rotateX(41.8deg)
+    rotateZ(-60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+
+#Tri18{
+    transform:
+    rotateX(180deg)
+    rotateZ(180deg)
+    rotateX(41.8deg)
+    rotateZ(60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+#Tri19{
+    transform:
+    rotateX(180deg)
+    rotateZ(-60deg)
+    rotateX(41.8deg)
+    rotateZ(-60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+#Tri20{
+    transform:
+    rotateX(180deg)
+    rotateZ(-60deg)
+    rotateX(41.8deg)
+    rotateZ(60deg)
+    rotateX(41.8deg)
+    translateZ(var(--IcosRadius));
+}
+
+
+a.fill-div{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+
+.rotationcontrol{
+    --octtop: -110px;
+    --octleft: -110px;
+    --octdims: calc(var(--IcosRadius) * 3.448);
+
+
+
+    .octsegment01 {
+        position: absolute;
+        top: var(--octtop);
+        left: var(--octleft);
+        width: var(--octdims);
+        height: var(--octdims);
+        clip-path: polygon(29.5% 0%, 70.5% 0%, 58% 30%, 42% 30%); /*polygon(30% 0%, 70% 0%, 64% 15%, 36% 15%)*/
+        /*background: rgb(48, 200, 136); //rgb(48, 0, 136);*/
+        transform: rotate(00deg);
+    }
+    .octsegment02 {
+        position: absolute;
+        top: var(--octtop);
+        left: var(--octleft);
+        width: var(--octdims);
+        height: var(--octdims);
+        clip-path: polygon(29.5% 0%, 70.5% 0%, 58% 30%, 42% 30%);
+        /*background: rgb(48, 0, 136);*/
+        transform: rotate(45deg);
+    }
+    
+    .octsegment03 {
+        position: absolute;
+        top: var(--octtop);
+        left: var(--octleft);
+        width: var(--octdims);
+        height: var(--octdims);
+        clip-path: polygon(29.5% 0%, 70.5% 0%, 58% 30%, 42% 30%);
+        /*background: rgb(48, 0, 136);*/
+        transform: rotate(90deg);
+    }
+    .octsegment04 {
+        position: absolute;
+        top: var(--octtop);
+        left: var(--octleft);
+        width: var(--octdims);
+        height: var(--octdims);
+        clip-path: polygon(29.5% 0%, 70.5% 0%, 58% 30%, 42% 30%);
+        /*background: rgb(48, 0, 136);*/
+        transform: rotate(135deg);
+    }
+    .octsegment05 {
+        position: absolute;
+        top: var(--octtop);
+        left: var(--octleft);
+        width: var(--octdims);
+        height: var(--octdims);
+        clip-path: polygon(29.5% 0%, 70.5% 0%, 58% 30%, 42% 30%);
+        /*background: rgb(48, 0, 136);*/
+        transform: rotate(180deg);
+    }
+    .octsegment06 {
+        position: absolute;
+        top: var(--octtop);
+        left: var(--octleft);
+        width: var(--octdims);
+        height: var(--octdims);
+        clip-path: polygon(29.5% 0%, 70.5% 0%, 58% 30%, 42% 30%);
+        /*background: rgb(48, 0, 136);*/
+        transform: rotate(225deg);
+    }
+    .octsegment07 {
+        position: absolute;
+        top: var(--octtop);
+        left: var(--octleft);
+        width: var(--octdims);
+        height: var(--octdims);
+        clip-path: polygon(29.5% 0%, 70.5% 0%, 58% 30%, 42% 30%);
+        /*background: rgb(48, 0, 136);*/
+        transform: rotate(270deg);
+    }
+    .octsegment08 {
+        position: absolute;
+        top: var(--octtop);
+        left: var(--octleft);
+        width: var(--octdims);
+        height: var(--octdims);
+        clip-path: polygon(29.5% 0%, 70.5% 0%, 58% 30%, 42% 30%);
+        /*background: rgb(48, 0, 136);*/
+        transform: rotate(315deg);
+    }
+    .octsegment01:hover ~ .Icos{
+        animation-play-state: 
+        paused,
+        running,  /* x*/
+        paused,   /*-x*/
+        paused,   /* y*/
+        paused,   /*-y*/
+        paused,   /* z*/
+        paused    /*-z*/
+        ;
+    }
+    .octsegment02:hover ~ .Icos{
+        animation-play-state: 
+        paused,
+        running,  /* x*/
+        paused,   /*-x*/
+        running,  /* y*/
+        paused,   /*-y*/
+        paused,   /* z*/
+        paused    /*-z*/
+        ;
+    }
+    .octsegment03:hover ~ .Icos{
+        animation-play-state: 
+        paused,
+        paused,   /* x*/
+        paused,   /*-x*/
+        running,  /* y*/
+        paused,   /*-y*/
+        paused,   /* z*/
+        paused    /*-z*/
+        ;
+    }
+    .octsegment04:hover ~ .Icos{
+        animation-play-state: 
+        paused,
+        paused,   /* x*/
+        running,  /*-x*/
+        running,  /* y*/
+        paused,   /*-y*/
+        paused,   /* z*/
+        paused    /*-z*/
+        ;
+    }
+    .octsegment05:hover ~ .Icos{
+        animation-play-state: 
+        paused,
+        paused,  /* x*/
+        running, /*-x*/
+        paused,  /* y*/
+        paused,  /*-y*/
+        paused,  /* z*/
+        paused   /*-z*/
+        ;
+    }
+    .octsegment06:hover ~ .Icos{
+        animation-play-state: 
+        paused,
+        paused,   /* x*/
+        running,  /*-x*/
+        paused,   /* y*/
+        running,  /*-y*/
+        paused,   /* z*/
+        paused    /*-z*/
+        ;
+    }
+    .octsegment07:hover ~ .Icos{
+        animation-play-state: 
+        paused,
+        paused,   /* x*/
+        paused,   /*-x*/
+        paused,   /* y*/
+        running,  /*-y*/
+        paused,   /* z*/
+        paused    /*-z*/
+        ;
+    }
+    .octsegment08:hover ~ .Icos{
+        animation-play-state: 
+        paused,
+        running,  /* x*/
+        paused,   /*-x*/
+        paused,   /* y*/
+        running,  /*-y*/
+        paused,   /* z*/
+        paused    /*-z*/
+        ;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes dummy {
+    0%   {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+    100% {transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);}
+}
+
+
+@keyframes spinx {
+    0%   {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);--thetax=0;}
+    100% {transform: rotateX(360deg) rotateY(0deg) rotateZ(0deg);--thetax=360;}
+}
+@keyframes spin-x {
+    0%   {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);--theta-x=0;}
+    100% {transform: rotateX(-360deg) rotateY(0deg) rotateZ(0deg);--theta-x=360;}
+}
+@keyframes spiny {
+    0%   {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);--thetay=0;}
+    100% {transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);--thetay=360;}
+}
+@keyframes spin-y {
+    0%   {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);--theta-y=0;}
+    100% {transform: rotateX(0deg) rotateY(-360deg) rotateZ(0deg);--theta-y=360;}
+}
+@keyframes spinz {
+    0%   {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);--thetaz=0;}
+    100% {transform: rotateX(0deg) rotateY(0deg) rotateZ(360deg);--thetaz=360;}
+}
+@keyframes spin-z {
+    0%   {transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);--theta-z=0;}
+    100% {transform: rotateX(0deg) rotateY(0deg) rotateZ(-360deg);--theta-z=360;}
+}
+
+
+
+@keyframes GlowPulse {
+    0%   {
+
+        background: rgb(48, 0, 136);
+        clip-path: polygon(50% 3%, 3% 73%, 97% 73%);
+        backdrop-filter: blur(10px) saturate(70%);
+        }
+    50% {
+
+        background: rgb(98, 50, 186);
+        clip-path: polygon(50% 0%, 0% 75%, 100% 75%);
+        backdrop-filter: blur(100px) saturate(70%);
+        }
+    100% {
+
+        background: rgb(48, 0, 136);
+        clip-path: polygon(50% 3%, 3% 73%, 97% 73%);
+        backdrop-filter: blur(10px) saturate(70%);
+        }
+}
+
+@keyframes slowgrow {
+    0%   {
+        transform: --IcosRadius: 100;
+        }
+    80%   {
+        transform: --IcosRadius: 100;
+        }
+    90% {
+        transform: --IcosRadius: 200;
+        }
+    100%   {
+        transform: --IcosRadius: 100;
+        }
+}
