@@ -148,13 +148,26 @@ body{
 .MoveRight img{
     max-height: 100%;
 }
-.pack1{
+.vertpack{
+    display: flex;
+    flex-direction: column;
+}
+.pack0{
     max-width: 30rem;
     padding-left: 10rem;
 }
-
-
-
+.pack1{
+    max-width: 10rem;
+    padding-left: 2rem;
+}
+.pack1-2{
+    max-height: 20rem;
+    padding-left: 2rem;
+}
+.pack2{
+    max-height: 25rem;
+    padding-left: 2rem;
+}
 
 
 
