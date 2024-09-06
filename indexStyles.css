@@ -93,6 +93,7 @@ body{
 
             }
             .Innactive a{
+                font-size: 10rem;
                 color: grey;
             }
 
@@ -161,12 +162,22 @@ h1{
 .SectionDivider{
     text-align: center;
 }
-.Answer{
-    visibility:hidden;
+.Answer .Prompt{
+    
+    color: lightgrey;
 }
-.SectionDivider:hover .Answer{
+.Answer .Return{
+    display: none;
+}
+.Answer:hover .Prompt{
+    display: none;
+}
+.Answer:hover .Return{
+    display: inline;
+}
+/*.SectionDivider:hover .Answer{
     visibility:visible
-}
+}*/
 
 
 
