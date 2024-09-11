@@ -55,7 +55,7 @@ body{
             display: flex;
             flex-direction: row;
             overflow: visible;
-            transform: translateX(-60rem);
+            transform: translateX(-56rem);
 
         }
             .MovingSection{
@@ -64,8 +64,8 @@ body{
                 overflow: visible;
 
                 animation:
-                    NavLeft  2s infinite linear,
-                    NavRight 2s infinite linear
+                    NavRight 2s infinite linear,
+                    NavLeft  2s infinite linear
                 ;
                 animation-play-state: 
                     paused, 
