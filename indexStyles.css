@@ -2,19 +2,20 @@
   body {
     flex-direction: column; /* Stack content vertically on mobile */
     margin-bottom: 2rem; /* Add bottom margin for spacing */
+    font-size: 1.5rem;
   }
   .ScrollListMenu {
     flex-direction: column; /* Stack navigation links vertically */
-    padding: 1rem 0; /* Add padding for better touch targets */
-    font-size: 0.9rem; /* Smaller text for readability */
+    /*padding: 1rem 0; /* Add padding for better touch targets */
+    font-size: 1.5rem; /* Smaller text for readability */
   }
   .LeftButton,
   .RightButton {
-    width: 100%; /* Full width on mobile */
     text-align: center; /* Center text in buttons */
     margin-bottom: 0.5rem; /* Spacing between buttons */
-    padding: 0.5rem 1rem; /* Larger touch targets */
-    font-size: 0.9rem; /* Match button text size */
+    /*padding: 0.5rem 1rem; /* Larger touch targets */
+    font-size: 1.5rem; /* Match button text size */
+    width: 4rem;
   }
 }
 
@@ -24,7 +25,6 @@
 
 *{
     font-family: 
-    ;
 }
 
 
